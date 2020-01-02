@@ -25,7 +25,7 @@
                     </tbody>
                  </template>
             </v-simple-table> 
-    </div>
+    </div> 
     <div v-if="error" class="v-row btns_etn" style="margin-left:0px">
         <v-btn color="warning" dark large>Silver</v-btn>
         <v-btn color="warning" dark large>Bronze</v-btn>
