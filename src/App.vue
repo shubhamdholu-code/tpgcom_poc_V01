@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+     <Logo />
+     <LoggedinScreen />
+     <router-view />
+    
+    <v-content>
+      <v-container fluid>
+      <router-link to ="/bank_history">
+        <v-btn v-on:click="error = !error" color="primary">Bank</v-btn>
+      </router-link>
+      </v-container>
+    </v-content>
+
+
+    <!-------footer---------->
+    <router-link to ="links">
+       <hr>
+      <v-btn color="warning">Play Slots </v-btn>
+    </router-link> 
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+import Logo from "./components/Logo"
+import LoggedinScreen from "./components/ParentComps/LoggedinScreen/LoggedinScreen";
+export default {
+  name: "App",
+  components: {
+    LoggedinScreen,
+    Logo
+    // home,
+  },
+  data: () => ({
+  })
+};
+</script>

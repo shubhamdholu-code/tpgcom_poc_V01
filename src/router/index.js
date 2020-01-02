@@ -1,23 +1,38 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Links_Component from "../components/ParentComps/Links_Component/Links.vue";
+import BankHistory from "../components/ParentComps/Bank_History/BankHistory.vue";
+import loggedin_screen from "../components/ParentComps/LoggedinScreen/LoggedinScreen.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/", 
     name: "home",
-    component: Home
+    component: Home //import name
   },
   {
     path: "/about",
     name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/links",
+    name: "Links",
+    component: Links_Component
+  },
+  {
+    path: "/bank_history",
+    name: "bank_history",
+    component:BankHistory
+  },
+  {
+    path: "/LoggedinScreen",
+    name: "LoggedinScreen",
+    component:loggedin_screen
   }
 ];
 
